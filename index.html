@@ -6,13 +6,68 @@
   <title>Valley Tech Systems</title>
   <meta name="description" content="Professional IT consulting and systems support for small businesses." />
   <style>
-    body {font-family: Arial, sans-serif; margin:0; color:#1f2937;}
-    header {background:#1f3a5f; color:white; padding:20px;}
-    .container {max-width:1000px; margin:auto; padding:20px;}
-    h1,h2 {color:#1f3a5f;}
-    .hero {padding:40px 0;}
-    .section {padding:30px 0; border-top:1px solid #eee;}
-    .cta {display:inline-block; background:#1f3a5f; color:white; padding:12px 20px; text-decoration:none; border-radius:6px;}
+    :root {
+      --navy: #1f3a5f;
+      --gray: #6b7280;
+      --light: #f7f9fc;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 20px 0;
+    }
+
+    h1, h2 {
+      color: var(--navy);
+    }
+
+    .hero {
+      padding: 60px 0;
+      background: var(--light);
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--navy);
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 40px 0;
+      border-top: 1px solid #eee;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: var(--gray);
+      border-top: 1px solid #eee;
+    }
   </style>
 </head>
 <body>
@@ -24,59 +79,64 @@
   </div>
 </header>
 
-<div class="container hero">
-  <h1>Reliable IT Support for Small Businesses</h1>
-  <p>
-    Led by an experienced IT Helpdesk Manager with a proven track record supporting environments ranging from small businesses to enterprise organizations with thousands of users.
-  </p>
-  <a class="cta" href="mailto:info@valleytechsystems.com">Contact Now</a>
-</div>
+<section class="hero">
+  <div class="container">
+    <h1>Reliable IT Support for Small Businesses</h1>
+    <p>
+      Practical, real-world IT solutions backed by years of experience supporting businesses, schools, and enterprise environments.
+    </p>
+    <a class="cta" href="mailto:info@valleytechsystems.com">Contact</a>
+  </div>
+</section>
 
-<div class="container section">
-  <h2>About</h2>
-  <p>
-    Valley Tech Systems is operated by Andrew Thrall, an experienced IT professional with over a decade of hands-on experience across managed services, enterprise environments, and public sector organizations.
-  </p>
-  <p>
-    With a background leading helpdesk teams, managing enterprise systems, and implementing modern IT solutions, Valley Tech Systems focuses on delivering practical, efficient, and scalable technology solutions for small businesses.
-  </p>
-</div>
+<section class="section">
+  <div class="container">
+    <h2>About</h2>
+    <p>
+      Valley Tech Systems is run by an experienced IT professional with a background supporting environments ranging from small teams to large organizations. The focus is simple: reliable systems, clean setups, and technology that actually works the way it should.
+    </p>
+    <p>
+      With hands-on experience in Microsoft environments, device management, and system deployments, Valley Tech Systems brings enterprise-level knowledge into a practical, small business approach.
+    </p>
+  </div>
+</section>
 
-<div class="container section">
-  <h2>Services</h2>
-  <ul>
-    <li><strong>Microsoft 365 & Email:</strong> Domain setup, email configuration, account management</li>
-    <li><strong>Device Management:</strong> Microsoft Intune, endpoint security, compliance setup</li>
-    <li><strong>Systems & Networking:</strong> NAS setup, file access, permissions, infrastructure support</li>
-    <li><strong>IT Setup & Support:</strong> New business setup, troubleshooting, ongoing support</li>
-  </ul>
-</div>
+<section class="section">
+  <div class="container">
+    <h2>Services</h2>
+    <ul>
+      <li><strong>Microsoft 365 & Email:</strong> Domain setup, email routing, account management</li>
+      <li><strong>Device Management:</strong> Intune setup, endpoint security, compliance</li>
+      <li><strong>File & Systems:</strong> NAS setup, file access, permissions</li>
+      <li><strong>IT Setup & Support:</strong> New business setup and ongoing support</li>
+    </ul>
+  </div>
+</section>
 
-<div class="container section">
-  <h2>Experience Highlights</h2>
-  <ul>
-    <li>IT Helpdesk Manager supporting 20+ clients</li>
-    <li>Led implementations of MDM, MFA, SSO, and compliance solutions</li>
-    <li>Extensive experience with Microsoft Intune, Active Directory, Azure</li>
-    <li>Managed and supported environments with up to 10,000 users</li>
-    <li>Proven track record of improving processes and reducing support time</li>
-  </ul>
-</div>
+<section class="section">
+  <div class="container">
+    <h2>Experience</h2>
+    <ul>
+      <li>Supported environments with thousands of users across multiple organizations</li>
+      <li>Hands-on experience with Microsoft Intune, Active Directory, and Azure</li>
+      <li>Led implementations of MDM, MFA, and system rollouts</li>
+      <li>Strong background in troubleshooting, deployments, and system optimization</li>
+    </ul>
+  </div>
+</section>
 
-<div class="container section">
-  <h2>Why Choose Valley Tech Systems</h2>
-  <ul>
-    <li>Real-world enterprise experience applied to small businesses</li>
-    <li>Fast, practical solutions without unnecessary complexity</li>
-    <li>Clear communication and reliable support</li>
-    <li>Modern IT approach using Microsoft and cloud-based tools</li>
-  </ul>
-</div>
+<section class="section">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:info@valleytechsystems.com">info@valleytechsystems.com</a></p>
+  </div>
+</section>
 
-<div class="container section">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:info@valleytechsystems.com">info@valleytechsystems.com</a></p>
-</div>
+<footer>
+  <div class="container">
+    © 2026 Valley Tech Systems
+  </div>
+</footer>
 
 </body>
 </html>
