@@ -25,9 +25,8 @@
     }
 
     .container {
-      width: min(1100px, calc(100% - 40px));
-      margin-left: 20px;
-      margin-right: auto;
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
     }
 
     header {
@@ -85,13 +84,13 @@
 
     .hero {
       background: linear-gradient(180deg, var(--light) 0%, #ffffff 100%);
-      padding: 72px 0 56px;
+      padding: 64px 0 52px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 32px;
+      grid-template-columns: 1.05fr .85fr;
+      gap: 40px;
       align-items: center;
     }
 
@@ -100,6 +99,7 @@
       line-height: 1.08;
       margin: 0 0 18px;
       color: var(--navy);
+      max-width: 620px;
     }
 
     .hero p {
@@ -219,7 +219,7 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand" style="display:flex; align-items:center; gap:12px;"><img src="valley_tech_systems_logo.png" alt="Valley Tech Systems logo" style="height:44px; width:auto; border-radius:6px;" /><div>Valley Tech Systems<span>IT Consulting & Systems Support</span></div></div>
+      <div class="brand">Valley Tech Systems<span>IT Consulting & Systems Support</span></div>
       <a href="#contact">Contact</a>
     </div>
   </header>
@@ -245,7 +245,7 @@
             <div class="pill">Serving the Bay Area</div>
           </div>
         </div>
-        <div class="card">
+        <div class="card" style="max-width: 440px; justify-self: end;">
           <div class="mini-title">Trusted experience</div>
           <ul>
             <li>Experience supporting organizations ranging from small teams to large enterprise environments</li>
