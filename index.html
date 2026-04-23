@@ -8,10 +8,13 @@
   <style>
     :root {
       --navy: #1f3a5f;
-      --gray: #6b7280;
+      --slate: #6b7280;
       --light: #f7f9fc;
       --white: #ffffff;
+      --border: #dbe3ee;
     }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -22,121 +25,302 @@
     }
 
     .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
     }
 
     header {
-      background: var(--navy);
-      color: white;
-      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
     }
 
-    h1, h2 {
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 1.25rem;
+      font-weight: 700;
       color: var(--navy);
+      letter-spacing: .2px;
     }
 
-    .hero {
-      padding: 60px 0;
-      background: var(--light);
+    .brand span {
+      color: var(--slate);
+      font-weight: 500;
+      display: block;
+      font-size: .95rem;
+    }
+
+    .nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
     }
 
     .cta {
       display: inline-block;
-      margin-top: 20px;
       background: var(--navy);
-      color: white;
-      padding: 12px 20px;
+      color: var(--white);
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
     }
 
-    .section {
-      padding: 40px 0;
-      border-top: 1px solid #eee;
+    .cta.secondary {
+      background: transparent;
+      color: var(--navy);
+      border: 1px solid var(--border);
+    }
+
+    .hero {
+      background: linear-gradient(180deg, var(--light) 0%, #ffffff 100%);
+      padding: 72px 0 56px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      color: var(--navy);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin: 0 0 24px;
+      max-width: 650px;
+      color: #374151;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: var(--slate);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: .95rem;
+      font-weight: 600;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(31,58,95,.08);
+    }
+
+    .mini-title {
+      text-transform: uppercase;
+      font-size: .8rem;
+      letter-spacing: .08em;
+      color: var(--slate);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+
+    .section-sub {
+      color: var(--slate);
+      margin: 0 0 28px;
+      max-width: 720px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+    }
+
+    .service p {
+      margin: 0;
+      color: #4b5563;
+    }
+
+    .about-grid, .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
     }
 
     ul {
-      padding-left: 20px;
+      margin: 0;
+      padding-left: 18px;
     }
 
     footer {
-      padding: 30px 0;
-      text-align: center;
-      color: var(--gray);
-      border-top: 1px solid #eee;
+      padding: 28px 0 44px;
+      border-top: 1px solid var(--border);
+      color: var(--slate);
+      font-size: .95rem;
+    }
+
+    .contact-box a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .services, .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 52px;
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="container nav">
+      <div class="brand">Valley Tech Systems<span>IT Consulting & Systems Support</span></div>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
 
-<header>
-  <div class="container">
-    <h2>Valley Tech Systems</h2>
-    <p>IT Consulting & Systems Support</p>
-  </div>
-</header>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="mini-title">Small business IT support</div>
+          <h1>Reliable IT help for growing teams.</h1>
+          <p>
+            Valley Tech Systems provides practical IT consulting, Microsoft 365 support, device management,
+            and small business systems setup. Backed by real-world experience across managed services,
+            education, municipal, and enterprise environments.
+          </p>
+          <div class="button-row">
+            <a class="cta" href="mailto:info@valleytechsystems.com">Request Support</a>
+            <a class="cta secondary" href="#services">View Services</a>
+          </div>
+          <div class="pill-row">
+            <div class="pill">Microsoft 365</div>
+            <div class="pill">Intune & Defender</div>
+            <div class="pill">NAS & File Access</div>
+            <div class="pill">Small Business Setup</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="mini-title">Experience highlights</div>
+          <ul>
+            <li>Hands-on support across organizations ranging from small teams to enterprise environments</li>
+            <li>Experience with Microsoft Intune, Active Directory, Azure, SCCM, and Google Workspace</li>
+            <li>Led implementations involving MDM, MFA, SSO, compliance, and deployments</li>
+            <li>Strong background in troubleshooting, onboarding, documentation, and process improvement</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
-  <div class="container">
-    <h1>Reliable IT Support for Small Businesses</h1>
-    <p>
-      Practical, real-world IT solutions backed by years of experience supporting businesses, schools, and enterprise environments.
-    </p>
-    <a class="cta" href="mailto:info@valleytechsystems.com">Contact</a>
-  </div>
-</section>
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <p class="section-sub">Focused support for small businesses that need practical IT help without overcomplicating things.</p>
+        <div class="services">
+          <div class="card service">
+            <h3>Microsoft 365 & Email</h3>
+            <p>Domain setup, email routing, account management, mailbox support, and Microsoft 365 configuration.</p>
+          </div>
+          <div class="card service">
+            <h3>Device Management</h3>
+            <p>Microsoft Intune setup, Defender review, endpoint security, compliance policies, and device onboarding.</p>
+          </div>
+          <div class="card service">
+            <h3>File Access & Systems</h3>
+            <p>Synology NAS setup, File Explorer mapping, permissions, shared file access, and small business IT support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="section">
-  <div class="container">
-    <h2>About</h2>
-    <p>
-      Valley Tech Systems is run by an experienced IT professional with a background supporting environments ranging from small teams to large organizations. The focus is simple: reliable systems, clean setups, and technology that actually works the way it should.
-    </p>
-    <p>
-      With hands-on experience in Microsoft environments, device management, and system deployments, Valley Tech Systems brings enterprise-level knowledge into a practical, small business approach.
-    </p>
-  </div>
-</section>
+    <section id="about">
+      <div class="container about-grid">
+        <div class="card">
+          <h2 class="section-title">About</h2>
+          <p>
+            Valley Tech Systems is run by an experienced IT professional with a background supporting businesses,
+            schools, municipalities, and managed service environments. The focus is simple: reliable systems,
+            clean setups, and technology that works the way it should.
+          </p>
+        </div>
+        <div class="card">
+          <h2 class="section-title">Why choose Valley Tech Systems</h2>
+          <ul>
+            <li>Real-world experience across a wide range of environments</li>
+            <li>Practical recommendations without unnecessary complexity</li>
+            <li>Clear communication and professional support</li>
+            <li>Strong Microsoft and endpoint management background</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<section class="section">
-  <div class="container">
-    <h2>Services</h2>
-    <ul>
-      <li><strong>Microsoft 365 & Email:</strong> Domain setup, email routing, account management</li>
-      <li><strong>Device Management:</strong> Intune setup, endpoint security, compliance</li>
-      <li><strong>File & Systems:</strong> NAS setup, file access, permissions</li>
-      <li><strong>IT Setup & Support:</strong> New business setup and ongoing support</li>
-    </ul>
-  </div>
-</section>
+    <section id="contact">
+      <div class="container contact-grid">
+        <div class="card contact-box">
+          <h2 class="section-title">Get in touch</h2>
+          <p>Need help with setup, cleanup, or day-to-day small business IT support?</p>
+          <p><strong>Email:</strong><br><a href="mailto:info@valleytechsystems.com">info@valleytechsystems.com</a></p>
+          <p><strong>Business:</strong><br>Valley Tech Systems</p>
+        </div>
+        <div class="card">
+          <h2 class="section-title">Next step</h2>
+          <p>
+            Reach out with a quick overview of what you need help with, and Valley Tech Systems can recommend the best next step.
+          </p>
+          <a class="cta" href="mailto:info@valleytechsystems.com?subject=Valley%20Tech%20Systems%20Inquiry">Email Valley Tech Systems</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<section class="section">
-  <div class="container">
-    <h2>Experience</h2>
-    <ul>
-      <li>Supported environments with thousands of users across multiple organizations</li>
-      <li>Hands-on experience with Microsoft Intune, Active Directory, and Azure</li>
-      <li>Led implementations of MDM, MFA, and system rollouts</li>
-      <li>Strong background in troubleshooting, deployments, and system optimization</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:info@valleytechsystems.com">info@valleytechsystems.com</a></p>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    © 2026 Valley Tech Systems
-  </div>
-</footer>
-
+  <footer>
+    <div class="container">© 2026 Valley Tech Systems. All rights reserved.</div>
+  </footer>
 </body>
 </html>
